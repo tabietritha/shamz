@@ -70,7 +70,7 @@
                             <textarea rows="8" name="message" id="message" placeholder="Enter your message here..."></textarea>
                         </div>
                         
-                        <div id="formMessage"></div>
+                        <div id="formMessage" style="margin: 10px 0; color: red;"></div>
                         <button type="submit" class="submit-btn">SUBMIT</button>
                     </form>
                 </div>
@@ -131,6 +131,9 @@
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const formMessage = document.getElementById('formMessage');
+        formMessage.innerHTML = 'Sending message...';
+        
         const formData = new FormData(this);
         
         fetch('send_email.php', {
@@ -139,18 +142,19 @@
         })
         .then(response => response.json())
         .then(data => {
-            const messageDiv = document.getElementById('formMessage');
             if(data.status === 'success') {
-                messageDiv.innerHTML = '<p style="color: green;">Message sent successfully!</p>';
+                formMessage.style.color = 'green';
+                formMessage.innerHTML = data.message;
                 this.reset();
             } else {
-                messageDiv.innerHTML = '<p style="color: red;">Failed to send message. Please try again.</p>';
+                formMessage.style.color = 'red';
+                formMessage.innerHTML = data.message || 'Failed to send message';
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            document.getElementById('formMessage').innerHTML = 
-                '<p style="color: red;">An error occurred. Please try again later.</p>';
+            formMessage.style.color = 'red';
+            formMessage.innerHTML = 'An error occurred. Please try again later.';
         });
     });
 </script>
