@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Mukalazi Clay Products Distributor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="logo">
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="products.html">Products</a>
+            <a href="contacts.html">Contacts</a>
+        </div>
+        <button class="menu-button" id="menuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section class="products-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/porotherm.jpg" alt="Building blocks">
+                    </div>
+                    <div class="product-details">
+                        <h3>Porotherm Blocks</h3>
+                        <p>Mulakazi Clay Products Distributor distubes Porotherm Blocks, a lightweight clay block for construction.
+                            The block has benefits like thermal insulation, strength, ease of use, and faster construction. 
+                            Mulakazi Clay Products Distributor also provides a Dryfix adhesive system 
+                            that allows for quicker construction by bonding blocks together instead of using mortar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mukalazi Clay Products Distributor. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    // Add this to all your HTML files right before the closing </body> tag
+<script>
+    // Toggle menu for mobile
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+
+    menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+
+    // Navbar background change on scroll
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 80) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Close mobile menu if open
+                if (navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

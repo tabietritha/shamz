@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mukalazi Clay Products Distributor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="images/logo.jpeg" alt="logo">
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="products.html">Products</a>
+      <a href="contacts.html">Contacts</a>
+    </div>
+    <button class="menu-button" id="menuButton">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Mukalazi Clay Products Distributor</h1>
+      <p>Quality clay building materials for all your construction needs</p>
+      <a href="products.html" class="cta-button">Explore Our Products</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a team of passionate individuals dedicated to providing the best service possible. Our mission is to create memorable experiences for our clients by delivering quality clay products for all your building needs.</p>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p>Check out our gallery below to see some of our amazing work and products.</p>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="images/sham7.jpg" alt="Clay Products">
+        </div>
+        <div class="gallery-item">
+          <img src="images/clay paver.jpg" alt="Clay Products">
+        </div>
+        <div class="gallery-item">
+          <img src="images/sham1.jpg" alt="Clay Products">
+        </div>
+        <div class="gallery-item">
+          <img src="images/sham2.jpg" alt="Clay Products">
+        </div>
+        <div class="gallery-item">
+          <img src="images/sham3.jpg" alt="Clay Products">
+        </div>
+        <div class="gallery-item">
+          <img src="images/sham4.jpg" alt="Clay Products">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="container">
+      <h2>Contacts</h2>
+      <p>If you have any questions or would like to get in touch, please contact us at:</p>
+      <div class="contact-info">
+        <p><i class="fa-solid fa-envelope"></i> Email: Shamranmukalazi750@gmail.com</p>
+        <p><i class="fa-brands fa-whatsapp"></i> Phone: +256 752998107</p>
+        <p><i class="fa-solid fa-location-dot"></i> Location: Kajjansi</p>
+        <p><i class="fa-solid fa-clock"></i> Business Hours: 7:00AM - 6:00PM</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Mukalazi Clay Products Distributor. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+      // Toggle menu for mobile
+      const menuButton = document.getElementById('menuButton');
+      const navLinks = document.getElementById('navLinks');
+  
+      menuButton.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+      });
+  
+      // Navbar background change on scroll
+      window.addEventListener('scroll', function() {
+          const nav = document.querySelector('nav');
+          if (window.scrollY > 80) {
+              nav.classList.add('scrolled');
+          } else {
+              nav.classList.remove('scrolled');
+          }
+      });
+  
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              const targetId = this.getAttribute('href');
+              if (targetId === '#') return;
+              
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                  targetElement.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                  });
+                  
+                  // Close mobile menu if open
+                  if (navLinks.classList.contains('show')) {
+                      navLinks.classList.remove('show');
+                  }
+              }
+          });
+      });
+  </script>
+</body>
+</html>

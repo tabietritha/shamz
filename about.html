@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mukalazi Clay Products Distributor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="logo">
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="products.html">Products</a>
+            <a href="contacts.html">Contacts</a>
+        </div>
+        <button class="menu-button" id="menuButton">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Welcome to Mukalazi Clay Products Distributor, your trusted partner for high-quality clay building materials in Uganda. Established with a passion for excellence, we specialize in manufacturing and distributing a comprehensive range of clay products for all your construction needs.</p>
+                
+                <h3>Our Products</h3>
+                <p>We offer a diverse selection of clay building materials, including:</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check"></i> Building bricks in various sizes and strengths</li>
+                    <li><i class="fas fa-check"></i> Roof tiles with exceptional durability and weather resistance</li>
+                    <li><i class="fas fa-check"></i> Floor bricks in multiple finishes and patterns</li>
+                    <li><i class="fas fa-check"></i> Decorative clay products for interior and exterior applications</li>
+                </ul>
+                
+                <h3>Why Choose Us?</h3>
+                <p>At Mukalazi Clay Products, we pride ourselves on:</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-star"></i> Premium quality clay sourced from the finest deposits</li>
+                    <li><i class="fas fa-star"></i> Consistent product quality through rigorous testing</li>
+                    <li><i class="fas fa-star"></i> Competitive pricing without compromising on quality</li>
+                    <li><i class="fas fa-star"></i> Reliable delivery services across the country</li>
+                    <li><i class="fas fa-star"></i> Expert advice on product selection for your specific needs</li>
+                </ul>
+                
+                <h3>Our Services</h3>
+                <p>Beyond our product range, we offer:</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-truck"></i> Nationwide delivery services with on-time guarantees</li>
+                    <li><i class="fas fa-ruler-combined"></i> Custom sizing options to meet your exact specifications</li>
+                    <li><i class="fas fa-calculator"></i> Quantity estimation assistance for your projects</li>
+                    <li><i class="fas fa-handshake"></i> Bulk order discounts for large projects</li>
+                </ul>
+                
+                <h3>Our Commitment</h3>
+                <p>Based in Kajjansi, we serve construction companies, contractors, and individual builders throughout Uganda. Our commitment to quality, reliability, and customer satisfaction has made us a preferred supplier in the construction industry.</p>
+                
+                <p>Whether you're building a residential home, commercial property, or undertaking a renovation project, Mukalazi Clay Products Distributor is here to provide you with the finest clay building materials to bring your vision to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mukalazi Clay Products Distributor. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    // Add this to all your HTML files right before the closing </body> tag
+    <script>
+        // Toggle menu for mobile
+        const menuButton = document.getElementById('menuButton');
+        const navLinks = document.getElementById('navLinks');
+    
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 80) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
